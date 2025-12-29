@@ -1,0 +1,45 @@
+name: Deploy to AWS S3 + CloudFront
+
+on:
+  push:
+    branches:
+      - main  # Change if your default branch is different
+
+permissions:
+  contents: read
+  id-token: write  # Required for OIDC
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Configure AWS Credentials (OIDC)
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.AWS_ROLE_ARN }}  # Paste your full role ARN
+          aws-region: us-east-1
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'yarn'  # This enables Yarn caching for faster runs
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile  # Clean, reproducible install
+
+      - name: Build React app
+        run: yarn build  # Vite uses "build" script
+
+      - name: Deploy to S3 & Invalidate CloudFront
+        uses: reggionick/s3-deploy@v4
+        with:
+          folder: dist
+          bucket: ${{ vars.AWS_S3_BUCKET }}
+          bucket-region: us-east-1
+          dist-id: ${{ vars.AWS_CLOUDFRONT_DISTRIBUTION_ID }}
+          invalidation: /*
+          delete-removed: true
