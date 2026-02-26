@@ -1,6 +1,6 @@
 // src/layouts/RootLayout.tsx
 import { Outlet } from 'react-router-dom';
-import Header from '../features/learn/components/Header/Header';
+import Header from '../features/learn/ProblemsAndConcepts/components/Header/Header';
 
 export default function RootLayout() {
   return (

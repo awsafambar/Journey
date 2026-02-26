@@ -1,5 +1,5 @@
 import { useEffect } from "react"
-import { callVideo } from "../../../../helper/webrtc"
+import { callVideo } from "../../../../../helper/webrtc"
 
 export const WebRtc = () => {
 

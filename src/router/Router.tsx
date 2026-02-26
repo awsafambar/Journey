@@ -4,6 +4,8 @@ import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import { Learn } from "../features/learn/Learn";
 import RootLayout from "../layouts/RootLayout"; // ← import the new layout
+import { JSConcepts } from "../features/learn/JSConcept/JSConcepts";
+import { Problems } from "../features/learn/ProblemsAndConcepts/Problems";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +19,14 @@ const router = createBrowserRouter([
       {
         path: "/learn",      // Learn page
         element: <Learn />,
+      },
+      {
+        path: "learn/jsconcept",      // Learn page
+        element: <JSConcepts />,
+      },
+      {
+        path: "learn/problemsConcept",      // Learn page
+        element: <Problems />,
       },
       {
         path: "*",           // 404 for any unmatched route
