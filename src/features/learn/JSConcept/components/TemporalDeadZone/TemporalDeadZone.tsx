@@ -6,7 +6,7 @@ export const TemporalDeadZone = () => {
     //@ts-ignore
     const a = 10
     } catch (error) {
-        console.error(error)
+        console.error('error',error)
         // Handle TDZ error for 'a'
     }
 
