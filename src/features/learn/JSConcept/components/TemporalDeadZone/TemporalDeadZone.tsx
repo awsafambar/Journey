@@ -23,7 +23,7 @@ export const TemporalDeadZone = () => {
             // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     //@ts-ignore
     console.log(b) // undefined
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment, no-var
+    // eslint-disable-next-line no-var
     var b = 20
     } catch (error) {
         console.error(error)
