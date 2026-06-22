@@ -10,9 +10,38 @@
     />
     <meta name="theme-color" content="#0f172a" />
     <title>Awsaf Ambar | Frontend Developer</title>
+
+    <!-- Add a skip link style so the link is visible only when focused -->
+    <style>
+      .skip-link {
+        position: absolute;
+        left: -999px;
+        top: auto;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+      }
+
+      .skip-link:focus,
+      .skip-link:active {
+        left: 1rem;
+        top: 1rem;
+        width: auto;
+        height: auto;
+        background: #06b6d4;
+        color: #fff;
+        padding: 0.5rem 1rem;
+        z-index: 1000;
+        border-radius: 4px;
+        text-decoration: none;
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <!-- Skip to content link for keyboard users -->
+    <a href="#root" class="skip-link">Skip to content</a>
+
+    <div id="root" tabindex="-1"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
