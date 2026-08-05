@@ -1,4 +1,4 @@
-import { certifications, highlights, projects, resumeConfig, skillGroups, strengths } from "../portfolio/data";
+import { certifications, highlights, projects, skillGroups, strengths } from "../portfolio/data";
 import { useTheme } from "../../theme/ThemeProvider";
 
 export function About() {
@@ -25,34 +25,6 @@ export function About() {
               {strengths.map((item) => (
                 <p key={item}>{item}</p>
               ))}
-            </div>
-            <div className="mt-5">
-              {resumeConfig.enabled ? (
-                <a
-                  href={resumeConfig.publicPath}
-                  download
-                  className={
-                    isDark
-                      ? "inline-flex rounded-full bg-cyan-300 px-5 py-2.5 text-sm font-semibold text-slate-950 transition hover:bg-cyan-200"
-                      : "inline-flex rounded-full bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-slate-700"
-                  }
-                >
-                  {resumeConfig.label}
-                </a>
-              ) : (
-                <button
-                  type="button"
-                  disabled
-                  title="Add your latest CV PDF to enable direct download."
-                  className={
-                    isDark
-                      ? "cursor-not-allowed rounded-full border border-slate-700 bg-slate-900/70 px-5 py-2.5 text-sm font-semibold text-slate-400"
-                      : "cursor-not-allowed rounded-full border border-slate-200 bg-slate-100 px-5 py-2.5 text-sm font-semibold text-slate-400"
-                  }
-                >
-                  {resumeConfig.label}
-                </button>
-              )}
             </div>
           </article>
 

@@ -86,7 +86,7 @@ export default function RootLayout() {
             : "pointer-events-none fixed inset-x-0 bottom-0 z-40 pb-2 text-center text-xs text-slate-500"
         }
       >
-        © 2026 Awsaf Ambar. Powered by AI.
+        © 2026 Awsaf Ambar.
       </footer>
     </div>
   );

@@ -76,7 +76,7 @@ export const certifications = [
 export const resumeConfig: ResumeConfig = {
   label: "Download CV",
   publicPath: "/files/awsaf-ambar-cv.pdf",
-  enabled: false,
+  enabled: true,
 };
 
 export const projects: Project[] = [
